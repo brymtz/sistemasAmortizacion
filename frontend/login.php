@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,6 +21,9 @@
          <form method="post" action="">
             <img src="images/avatar.svg">
             <h2 class="title">BIENVENIDO</h2>
+            <?php
+               include "../backend/controllers/control_login.php";
+            ?>
             <div class="input-div one">
                <div class="i">
                   <i class="fas fa-user"></i>
@@ -43,7 +45,7 @@
             <div class="view">
                <div class="fas fa-eye verPassword" onclick="vista()" id="verPassword"></div>
             </div>
-            <input name="btningresar" class="btn" type="submit" value="INICIAR SESION">
+            <input name="btnIngresar" class="btn" type="submit" value="INICIAR SESION">
          </form>
       </div>
    </div>
