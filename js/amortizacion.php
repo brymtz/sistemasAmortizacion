@@ -1,11 +1,40 @@
+
+
+<script>
 const monto = document.getElementById('monto');
 const tiempo = document.getElementById('tiempo');
-const interes = document.getElementById('interes');
+var tipo = document.getElementById('interes').value;
 const btnCalcular = document.getElementById('btnCalcular');
 const llenarTabla = document.querySelector('#lista-tabla tbody');
 
+function obtenerInteres(){
+    switch (tipo){
+        case "1":
+            <?php ?>
+            break;
+        case "2":
+         
+            break;
+        case "3":
+         
+            break;
+        case "4":
+         
+            break;
+      }
+
+      
+}
+
 btnCalcular.addEventListener('click', () => {
-    calcularCuota(monto.value, interes.value, tiempo.value);
+
+  
+    /* if(interes==="iConsumo"){
+        alert("iConsumo");
+        }else if(interes==="iMicrocredito"){
+            alert("iMicrocredito");
+        }*/
+    //calcularCuota(monto.value, interes.value, tiempo.value);
 })
 
 function calcularCuota(monto, interes, tiempo){
@@ -44,3 +73,4 @@ function calcularCuota(monto, interes, tiempo){
         llenarTabla.appendChild(row)
     }
 }
+</script>
