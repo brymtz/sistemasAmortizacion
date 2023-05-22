@@ -12,11 +12,11 @@ btnCalcular.addEventListener("click", () => {
   banco = document.getElementById("Banco").value;
   switch (interes) {
     case 1:
-        fetch('http://localhost/sistemasAmortizacion/backend/models/bancos.php?id='+banco)
-        .then(response => response.text())
+        fetch('http://localhost/ProyectoEconomia/sistemasAmortizacion/backend/models/bancos.php?id='+banco)
+        .then(response => response.json())
         .then(data => {
           // Convertir el resultado en formato de JavaScript
-          var valor = parseInt(data);
+          var valor = parseFloat(data);
           console.log(valor);
         });
       break;

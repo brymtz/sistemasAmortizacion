@@ -4,11 +4,11 @@
 
     $ID=$_REQUEST["id"];
 
-    $sqlListar= "SELECT Consumo FROM instituciones where idInst='$ID' ";
+    $sqlListar= "SELECT iConsumo FROM instituciones where idInst='$ID' ";
     $respuesta=$conexion->query($sqlListar);
     if( $respuesta !== false && $respuesta -> num_rows> 0 ){
         $row = $respuesta->fetch_assoc();
-        $result = $row['Consumo'];    
+        $result = $row['iConsumo'];    
         echo json_encode($result);   
     }else{
         $result="No hay instituciones";
