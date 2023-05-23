@@ -10,36 +10,54 @@ btnCalcular.addEventListener("click", () => {
   interes = parseInt(document.getElementById("interes").value); 
   let banco;
   banco = document.getElementById("Banco").value;
+if(banco!=0&&monto.value!=0&&tiempo.value!=0){
   switch (interes) {
     case 1:
-        fetch('http://localhost/ProyectoEconomia/sistemasAmortizacion/backend/models/bancos.php?id='+banco)
+        fetch('../sistemasAmortizacion/backend/models/consumo.php?id='+banco)
         .then(response => response.json())
         .then(data => {
           // Convertir el resultado en formato de JavaScript
           var valor = parseFloat(data);
-          console.log(valor);
+          calcularCuota(monto.value, valor, tiempo.value);
         });
       break;
     case 2:
-      alert("Microcredito");
+      fetch('../sistemasAmortizacion/backend/models/micro.php?id='+banco)
+      .then(response => response.json())
+      .then(data => {
+        // Convertir el resultado en formato de JavaScript
+        var valor = parseFloat(data);
+        calcularCuota(monto.value, valor, tiempo.value);
+      });
       break;
 
     case 3:
-      alert("Vivienda");
+      fetch('../sistemasAmortizacion/backend/models/vivienda.php?id='+banco)
+      .then(response => response.json())
+      .then(data => {
+        // Convertir el resultado en formato de JavaScript
+        var valor = parseFloat(data);
+        calcularCuota(monto.value, valor, tiempo.value);
+      });
       break;
 
     case 4:
-    alert("Estudiantil");
+      fetch('../sistemasAmortizacion/backend/models/estudiantil.php?id='+banco)
+      .then(response => response.json())
+      .then(data => {
+        // Convertir el resultado en formato de JavaScript
+        var valor = parseFloat(data);
+        calcularCuota(monto.value, valor, tiempo.value);
+      });
     break;
 
     default:
       alert("Error");
   }
-  //calcularCuota(monto.value, interes.value, tiempo.value);
-  //obtenerInteres();
-  //console.log(interes);
-  console.log(interes);
-  console.log(banco);
+}else{
+  alert("Compruebe que la institucion finaciera y los datos ingresados esten correctos");
+}
+
 });
 
 function calcularCuota(monto, interes, tiempo) {
