@@ -13,7 +13,7 @@ $resul = $conexion->query($sql);
 $lista= array();
 while( $fila = $resul-> fetch_assoc() ){
     $aux = utf8_decode($fila['nomInst']);
-    $data  = "<option>".$aux."</option >";
+    $data  = '<option value="'.$aux.'">'.$aux.'</option >';
     array_push($lista, $data );
 }
 
