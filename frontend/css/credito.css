@@ -1,0 +1,115 @@
+/* Estilo para el formulario */
+.titulo{
+    margin-top: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #007bff;
+    text-align: center;
+    font-size: 30px;
+    margin-left: 250px;
+}
+.formulario {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-left: 250px;
+    margin-top: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilo para los labels */
+  .formulario label {
+    font-weight: bold;
+  }
+  
+  /* Estilo para los inputs */
+  .formulario input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilo para los botones */
+  .formulario button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para el segundo botón */
+  .formulario button.secondary {
+    background-color: #6c757d;
+  }
+  
+  /* Estilo para los botones al estar activos */
+  .formulario button:active {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para los botones al pasar el cursor por encima */
+  .formulario button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo para el contenedor del dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Estilo para el botón del dropdown */
+  .dropdown .dropdown-toggle {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Estilo para el menú desplegable */
+  .dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    display: none;
+    min-width: 150px;
+    padding: 8px;
+    margin-top: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Estilo para los elementos del menú desplegable */
+  .dropdown .dropdown-menu a {
+    display: block;
+    padding: 4px 8px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Estilo para los elementos del menú desplegable al pasar el cursor por encima */
+  .dropdown .dropdown-menu a:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilo para mostrar el menú desplegable al pasar el cursor por encima del botón */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Estilo para mostrar el menú desplegable cuando está abierto */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+  
