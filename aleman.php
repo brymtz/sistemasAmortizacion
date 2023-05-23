@@ -8,7 +8,7 @@ include_once ("backend/models/interes.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Método amortización francés</title>
+    <title>Método amortización aleman</title>
 
 </head>
 
@@ -20,7 +20,7 @@ include_once ("backend/models/interes.php");
     <div class="container">
         <div class="row mt-3">
             <div class="col-6">
-                <h2>Calcular amortización método francés</h2>
+                <h2>Calcular amortización método aleman</h2>
                 <div class="form-group">
                     <label for="monto">Monto</label>
                     <input type="text" class="form-control" id="monto" placeholder="Ingresar monto">
@@ -53,9 +53,9 @@ include_once ("backend/models/interes.php");
                     <thead>
                         <tr>
                             <th>Fecha</th>
-                            <th>Cuota</th>
                             <th>Capital</th>
-                            <th>Interés</th>
+                            <th>Interes</th>
+                            <th>Cuota</th>
                             <th>Saldo</th>
                         </tr>
                     </thead>
@@ -65,8 +65,8 @@ include_once ("backend/models/interes.php");
         </div>
 
     </div>
-    <script src="js/frances.js"></script>
-    <script src="js/moment.js"></script>
+    <script src="js/aleman.js"></script>
+    <script src="js/days.min.js"></script>
 
 
     <!-- llamada a bootstrap -->
