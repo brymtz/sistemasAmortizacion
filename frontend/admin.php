@@ -24,7 +24,7 @@
                 <br><br>
                 <div class="config">
                     <li><a href="adminC.php" target="allIframe">Configuración</a></li>
-                    <li><a href="adminAs.php" target="allIframe">Insetar Asesor</a></li>
+                    <li><a href="adminAs.php" target="allIframe">Insertar Asesor</a></li>
                     <li><a href="../backend/controllers/control_logout.php">Cerrar Sesión</a></li>
                 </div>
             </div>

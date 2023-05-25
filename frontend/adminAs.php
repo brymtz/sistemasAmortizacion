@@ -54,7 +54,7 @@
             </table>
 
     <!--FLoating Button--->
-    <a href="#" class="hero__cta float-button">Update</a>
+    <a href="#" class="hero__cta float-button">Insertar</a>
 
 
     <!--Ventana Modadl--->
@@ -84,16 +84,16 @@
                     <div class="campo__Asesor"  >
                         <Label  class="form__label" >Institucion</Label>   
                        <select name="institucion" id="institucion" class="mySelect" >
-                           <option value="ban01">ban01</option>
-                           <option value="ban02">ban02</option>
-                           <option value="ban03">ban03</option>
-                           <option value="ban04">ban04</option>
-                           <option value="ban05">ban05</option>
-                           <option value="ban06">ban06</option>
-                           <option value="ban07">ban07</option>
-                           <option value="ban08">ban08</option>
-                           <option value="ban09">ban09</option>
-                           <option value="ban10">ban10</option>
+                           <option value="ban01">Pichincha</option>
+                           <option value="ban02">Guayaquil</option>
+                           <option value="ban03">Central</option>
+                           <option value="ban04">Pacifico</option>
+                           <option value="ban05">Rumiñahui</option>
+                           <option value="ban06">Coorp. Financiera</option>
+                           <option value="ban07">Bolivariano</option>
+                           <option value="ban08">Machala</option>
+                           <option value="ban09">Internacional</option>
+                           <option value="ban10">Produbanco</option>
                        </select>
                     </div>
                  <div class="botones">
