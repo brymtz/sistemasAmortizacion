@@ -15,8 +15,15 @@ include_once ("backend/models/interes.php");
 <!-- llamada a bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="frontend/css/cliente.css">
 
 <body>
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Simulador de Créditos</a>
+  <form class="form-inline">
+    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Iniciar Sesion</button>
+  </form>
+</nav>
     <div class="container">
         <div class="row mt-3">
             <div class="col-6">
@@ -26,7 +33,7 @@ include_once ("backend/models/interes.php");
                     <input type="text" class="form-control" id="monto" placeholder="Ingresar monto">
                 </div>
                 <div class="form-group">
-                    <label for="tiempo">Tiempo en Meses</label>
+                    <label for="tiempo">Tiempo en Meses (máximo: 60 meses)</label> 
                     <input type="text" class="form-control" id="tiempo" placeholder="Ingresar cantidad de meses">
                 </div>
                 <br>
@@ -46,7 +53,7 @@ include_once ("backend/models/interes.php");
 
                <div class="form-group">
                     <label >Seleciona el interes:</label>
-                   <select id="interes">
+                   <select name="interes" id="interes">
                         <option value="1">Consumo</option>
                         <option value="2">Microcredito</option>
                         <option value="3">Vivienda</option>

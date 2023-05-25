@@ -13,7 +13,7 @@ btnCalcular.addEventListener("click", () => {
   let sistema;
   sistema= document.getElementById("tipo").value;
 
-if(banco!=0&&monto.value!=0&&tiempo.value!=0){
+if(banco!=0&&monto.value!=0&&tiempo.value!=0&&tiempo.value<=60&&tiempo.value>0){
   switch (interes) {
     case 1:
         fetch('../sistemasAmortizacion/backend/models/consumo.php?id='+banco)

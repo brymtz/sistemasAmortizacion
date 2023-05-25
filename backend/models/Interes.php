@@ -25,21 +25,6 @@ function todosBancos(){
     }
 }
            
-function Consumo($ID){
-    include 'conexion.php';
 
-    $sqlListar= "SELECT iConsumo FROM instituciones where idInst=$ID";
-    $respuesta=$conexion->query($sqlListar);
-    $result=array();
-    if($respuesta->num_rows>0){
-        while($filaestudiante=$respuesta->fetch_assoc()){
-
-            array_push($result, $filaestudiante);
-    
-        }
-    }else{
-        $result="No asignado";
-    }
-}
                     
 ?>
