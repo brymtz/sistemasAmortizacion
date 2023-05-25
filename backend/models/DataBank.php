@@ -9,21 +9,22 @@ function modalWindows(){
     $resul = $conexion->query($sql);
     $html2="";
     if( $fila = $resul-> fetch_assoc() ){
-        echo     '<Label  class="form__label">Consumo</Label>';
-        echo     '<input type="number"  class="from__control" require name="consumo" value="'.$fila['iConsumo'].'">';
-        echo '</div>';
-        echo '<div class="valor__interes">';
-        echo     '<Label  class="form__label">Microcredito</Label>';
-        echo     '<input type="number"  class="from__control" require name="microcredito" value="'.$fila['iMicrocredito'].'">';
-        echo '</div>';
-        echo '<div class="valor__interes">';
-        echo     '<Label  class="form__label">Vivienda</Label>';
-        echo     '<input type="number"  class="from__control" require name="vivienda" value="'.$fila['iVivienda'].'">';
-        echo '</div>';
-        echo '<div class="valor__interes">';
-        echo     '<Label  class="form__label">Estudiantil</Label>';
-        echo     '<input type="number"  class="from__control" require name="estudiantil" value="'.$fila['iEstudiantil'].'">';
-        echo '</div>';
+        echo    '<div class="valor__interes">';
+        echo        '<Label  class="form__label">Consumo</Label>';
+        echo     '  <input type="number"  class="from__control" require name="consumo" value="'.$fila['iConsumo'].'">';
+        echo     '</div>';
+        echo     '<div class="valor__interes">';
+        echo        '<Label  class="form__label">Microcredito</Label>';
+        echo        '<input type="number"  class="from__control" require name="microcredito" value="'.$fila['iMicrocredito'].'">';
+        echo     '</div>';
+        echo     '<div class="valor__interes">';
+        echo        '<Label  class="form__label">Vivienda</Label>';
+        echo        '<input type="number"  class="from__control" require name="vivienda" value="'.$fila['iVivienda'].'">';
+        echo     '</div>';
+        echo     '<div class="valor__interes">';
+        echo        '<Label  class="form__label">Estudiantil</Label>';
+        echo        '<input type="number"  class="from__control" require name="estudiantil" value="'.$fila['iEstudiantil'].'">';
+        echo     '</div>';
        
     }
 

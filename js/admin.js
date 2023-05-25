@@ -1,6 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const listaB = document.getElementById('Banco');
+    const listaIn = document.getElementById('BIntereses');
 
     cargarListadoB();
 

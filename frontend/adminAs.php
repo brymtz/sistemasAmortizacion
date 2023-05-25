@@ -27,6 +27,9 @@
         background-color:white;
         color:#3b5998;
     }
+    div .mySelect{
+        width: 100px;
+    }
 </style>
 <body>
     
@@ -38,12 +41,12 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>APELLIDO</th>
-                        <th>INSTITUCION</th>
-                        <th>USUARIO</th>
-                        <th>CONTRASEÑA</th>
+                        <th style="color:red; text-align:center">ID</th>
+                        <th style="color:red; text-align:center">NOMBRE</th>
+                        <th style="color:red; text-align:center">APELLIDO</th>
+                        <th style="color:red; text-align:center">INSTITUCION</th>
+                        <th style="color:red; text-align:center">USUARIO</th>
+                        <th style="color:red; text-align:center">CONTRASEÑA</th>
                     </tr>
                 </thead>
                 <tbody id="asesores">
@@ -67,21 +70,32 @@
                      <input type="text"  class="from__control" require name="nombre">
                  </div>
                  <div class="campo__Asesor">
-                     <Label  class="form__label">Apellido</Label>
+                     <Label  class="form__label" >Apellido</Label>
                      <input type="text"  class="from__control" require name="apellido" >
-                 </div>
-                 <div class="campo__Asesor">
-                     <Label  class="form__label">Institucion</Label>
-                     <input type="text"  class="from__control" require name="institucion" >
                  </div>
                  <div class="campo__Asesor">
                      <Label  class="form__label">Usuario</Label>
                      <input type="text"  class="from__control" require name="user" >
-                 </div>
+                    </div>
                  <div class="campo__Asesor">
                      <Label  class="form__label">Contraseña</Label>
                      <input type="text"  class="from__control" require name="pass" >
-                 </div>
+                    </div>
+                    <div class="campo__Asesor"  >
+                        <Label  class="form__label" >Institucion</Label>   
+                       <select name="institucion" id="institucion" class="mySelect" >
+                           <option value="ban01">ban01</option>
+                           <option value="ban02">ban02</option>
+                           <option value="ban03">ban03</option>
+                           <option value="ban04">ban04</option>
+                           <option value="ban05">ban05</option>
+                           <option value="ban06">ban06</option>
+                           <option value="ban07">ban07</option>
+                           <option value="ban08">ban08</option>
+                           <option value="ban09">ban09</option>
+                           <option value="ban10">ban10</option>
+                       </select>
+                    </div>
                  <div class="botones">
                     <input class="update" type="submit" value="INSERTAR">
                     <a href="#" class="modal__close">Cancelar</a>

@@ -18,7 +18,7 @@ include ("conexion.php");
 
     if($mysqli->query($sqlInsert)=== TRUE )
     {
-        header("location:../../frontend/admin.php");
+        header("location:../../frontend/adminAs.php");
     }else
     {
         echo json_encode("Error".$sqlInsert.$mysqli->error);

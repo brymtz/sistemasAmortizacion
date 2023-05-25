@@ -44,10 +44,10 @@
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Consumo</th>
-                        <th>Micorcredito</th>
-                        <th>Vivienda</th>
-                        <th>Estudiantil</th>
+                        <th style="color:red; text-align:center">Consumo</th>
+                        <th style="color:red; text-align:center">Micorcredito</th>
+                        <th style="color:red; text-align:center">Vivienda</th>
+                        <th style="color:red; text-align:center">Estudiantil</th>
                     </tr>
                 </thead>
                 <tbody id="Intereses">
@@ -67,10 +67,9 @@
     <section class="modal ">
         <form class="modal__container" method="POST"  action="../backend/models/updateIntereses.php"">
             <h2 class="modal__title">Actualizar Intereses</h2>
-            <script></script>
-            <?php
-                echo modalWindows();
-            ?>
+                <?php
+                    echo modalWindows();
+                ?>
             <input type="submit" value="ACTUALIZAR">
             <a href="#" class="modal__close">Cancelar</a>
         </form>
