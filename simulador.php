@@ -8,7 +8,7 @@ include_once ("backend/models/interes.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Método amortización aleman</title>
+    <title>Simulador de Créditos</title>
 
 </head>
 
@@ -20,7 +20,7 @@ include_once ("backend/models/interes.php");
     <div class="container">
         <div class="row mt-3">
             <div class="col-6">
-                <h2>Calcular amortización método aleman</h2>
+                <h2>Simulador</h2>
                 <div class="form-group">
                     <label for="monto">Monto</label>
                     <input type="text" class="form-control" id="monto" placeholder="Ingresar monto">
@@ -30,6 +30,13 @@ include_once ("backend/models/interes.php");
                     <input type="text" class="form-control" id="tiempo" placeholder="Ingresar cantidad de meses">
                 </div>
                 <br>
+                <div class="form-group">
+                    <label >Seleciona el tipo de interes:</label>
+                   <select id="tipo">
+                        <option value="1">Aleman</option>
+                        <option value="2">Frances</option>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label >Institución Financiera :</label>
                     <select id="Banco">
@@ -53,9 +60,9 @@ include_once ("backend/models/interes.php");
                     <thead>
                         <tr>
                             <th>Fecha</th>
-                            <th>Capital</th>
-                            <th>Interes</th>
                             <th>Cuota</th>
+                            <th>Capital</th>
+                            <th>Interés</th>
                             <th>Saldo</th>
                         </tr>
                     </thead>
@@ -65,9 +72,9 @@ include_once ("backend/models/interes.php");
         </div>
 
     </div>
-    <script src="js/aleman.js"></script>
+    <script src="js/amortizar.js"></script>
+    <script src="js/moment.js"></script>
     <script src="js/days.min.js"></script>
-
 
     <!-- llamada a bootstrap -->
 
