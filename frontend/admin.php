@@ -13,16 +13,22 @@
     <title>Admin</title>
 </head>
 <body>
-
-    <div class="headerP">
-        <div class="item1">nombre</div> 
-        <div class="item2">Cerrar session</di>
-    </div>
-    <br>
     <div class="contenedor__padre">
         <div class="contenerdor__opciones">
-            <li><a href="#">Configuracion</a></li>
-            <li><a href="#">Insetar Asesor</a></li>
+            <div class="photo__user">
+                <div class="img">
+                    <img src="images/avatar.svg" alt="foto del user">
+                    <br>
+                    <p style="font-size:20px;">nombre User</p>
+                    <p style="color:#b2dafa" >Banco</p>
+                </div>
+                <br><br>
+                <div class="config">
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Insetar Asesor</a></li>
+                    <li><a href="../backend/controllers/control_logout.php">Cerrar Sesión</a></li>
+                </div>
+            </div>
         </div>
 
         <div class="contenedor__configuracion">
@@ -45,19 +51,29 @@
                         <th colspan="2"><center> Ociones</center></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="Intereses">
                     <tr>
-                        <td>12</td>
-                        <td>12</td>
-                        <td>12</td>
-                        <td>12</td>
-                        <td><a href=""> Edit</a></td>
-                        <td><a href="">Update</a</td>
+                        <?php
+                            include "../backend/models/DataBank.php";
+                        ?> 
+                        <td class="op"><li><a href="#" class="hero__cta">Actualizar</a></li></td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <!--Ventana Modadl--->
+    <section class="modal ">
+        <form class="modal__container" method="POST"  action="../backend/models/updateIntereses.php"">
+            <h2 class="modal__title">Actualizar Intereses</h2>
+            <?php
+                echo modalWindows();
+            ?>
+            <input type="submit" value="ACTUALIZAR">
+            <a href="#" class="modal__close">Cancelar</a>
+        </form>
+    </section>
 
 </body>
 <script src="../js/admin.js" ></script>

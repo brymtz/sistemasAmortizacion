@@ -14,7 +14,7 @@ if(!empty($_POST["btnIngresar"])){
             $_SESSION["id"] = $datos1 -> idAdmin;
             $_SESSION["nombre"] = $datos1 -> nomAdmin;
             $_SESSION["apellido"] = $datos1 -> apeAdmin;
-            header("location: ../frontend/dashboardAdmin.php");
+            header("location:../frontend/admin.php");
         }elseif($datos2=$query2 -> fetch_object()){
             $_SESSION["id"] = $datos2 -> idAsesor;
             $_SESSION["nombre"] = $datos2 -> nomAsesor;
