@@ -1,11 +1,13 @@
 <?php
-    session_start();
-    if(empty($_SESSION["id"])){
-        header("location: login.php");
-    }
+include "../backend/models/amortizaciones.php";
+session_start();
+if (empty($_SESSION["id"])) {
+    header("location: login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,58 +15,60 @@
     <link rel="stylesheet" type="text/css" href="css/asesor.css">
     <link rel="stylesheet" type="text/css" href="css/credito.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <title>Dashboard Asesor</title>
 </head>
+
 <body>
     <div class="wrapper">
-            <!--Top menu -->
-            <div class="sidebar">
-                <div class="profile">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="foto_perfil">
-                    <h3>
-                        <?php 
-                            echo $_SESSION["nombre"]." ".$_SESSION["apellido"];
-                        ?>
-                    </h3>
-                    <p>
-                        <?php 
-                            echo $_SESSION["tipoBanco"]." ".$_SESSION["nombreBanco"];
-                        ?>
-                    </p>
-                </div>
-                <ul>
-                    <li>
-                        <a href="dashboardAsesor.php">
-                            <span class="icon"><i class="fas fa-home"></i></span>
-                            <span class="item">Inicio</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="tasas-de-interes.php">
-                            <span class="icon"><i class="fa-solid fa-percent"></i></i></span>
-                            <span class="item">Tasas de Intéres</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="simulador-credito.php" class="active">
-                            <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
-                            <span class="item">Simulador</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../backend/controllers/control_logout.php">
-                            <span class="icon"><i class="fas fa-arrow-right-from-bracket"></i></span>
-                            <span class="item">Cerrar Sesión</span>
-                        </a>
-                    </li>
-                </ul>
+        <!--Top menu -->
+        <div class="sidebar">
+            <div class="profile">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="foto_perfil">
+                <h3>
+                    <?php
+                    echo $_SESSION["nombre"] . " " . $_SESSION["apellido"];
+                    ?>
+                </h3>
+                <p>
+                    <?php
+                    echo $_SESSION["tipoBanco"] . " " . $_SESSION["nombreBanco"];
+                    ?>
+                </p>
             </div>
+            <ul>
+                <li>
+                    <a href="dashboardAsesor.php">
+                        <span class="icon"><i class="fas fa-home"></i></span>
+                        <span class="item">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="tasas-de-interes.php">
+                        <span class="icon"><i class="fa-solid fa-percent"></i></i></span>
+                        <span class="item">Tasas de Intéres</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="simulador-credito.php" class="active">
+                        <span class="icon"><i class="fas fa-tachometer-alt"></i></span>
+                        <span class="item">Simulador</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../backend/controllers/control_logout.php">
+                        <span class="icon"><i class="fas fa-arrow-right-from-bracket"></i></span>
+                        <span class="item">Cerrar Sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
     <!------------------>
     <div class="container">
         <h3 class="titulo">Simulador de crédito</h3>
     </div>
+    <!--FORMULARIO-->
     <div class="container">
         <form class="formulario">
             <div class="form-group">
@@ -73,7 +77,7 @@
             </div>
             <div class="form-group">
                 <label for="montoCredito">Monto:</label>
-                <input type="email" class="form-control" id="montoCliente" placeholder="Ingrese el monto">
+                <input type="number" class="form-control" id="montoCredito" placeholder="Ingrese el monto">
             </div>
             <div class="form-group">
                 <label for="tiempoCredito">Tiempo:</label>
@@ -95,11 +99,11 @@
             </div>
             <br>
             <div class="form-group">
-                <label for="tiempoCredito">Tasa de Interés:</label>
-                <input type="email" class="form-control" id="tiempoCredito" placeholder="La tasa de interés es" readonly>
+                <label for="tasaInteres">Tasa de Interés:</label>
+                <input type="text" class="form-control" id="tasaInteres" placeholder="La tasa de interés es" readonly>
             </div>
             <div class="form-group">
-                <label for="email">Sistema de amortización:</label>
+                <label for="tipoAmortizacion">Sistema de amortización:</label>
                 <br>
                 <div class="dropdown">
                     <select class="dropdown-toggle">Opciones
@@ -111,13 +115,36 @@
                 </div>
             </div>
             <br>
-            <button type="submit" class="btn btn-primary">Generar</button>
+            <button type="submit" class="btn btn-primary">Calcular</button>
             <button type="button" class="btn btn-danger">Limpiar</button>
         </form>
     </div>
-    
+    </div>
+    <!--TABLA-->
+    <div class="container">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <table class="table table-striped table-hover" >
+                    <thead>
+                        <tr class="table-title">
+                            <th>Pago No.</th>
+                            <th>Cuota</th>
+                            <th>Interés</th>
+                            <th>Capital</th>
+                            <th>Saldo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                        aleman();
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-    <!----SCRIPTS-->
-    <script src="../js/asesor.js"></script>
+        <!----SCRIPTS-->
+        <script src="../js/asesor.js"></script>
 </body>
+
 </html>
