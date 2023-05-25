@@ -93,12 +93,14 @@ function calcularCuota(monto, interes, tiempo) {
     pagoCapital = 0,
     cuota = 0;
 
-  cuota =
-    (monto * ((Math.pow(1 + interes / 100, tiempo) * interes) / 100)) /
-    (Math.pow(1 + interes / 100, tiempo) - 1);
+ /* cuota =
+    (monto * (( interes / 100) / 12) /
+    (Math.pow(1 + interes / 100, tiempo) - 1));*/
+
+    cuota = (monto * (interes/12/100)) / (1 - Math.pow(1 + (interes/12/100), -tiempo));
 
   for (let i = 1; i <= tiempo; i++) {
-    pagoInteres = parseFloat(monto * (interes / 100));
+    pagoInteres = parseFloat((monto * (interes / 100))/12);
     pagoCapital = cuota - pagoInteres;
     monto = parseFloat(monto - pagoCapital);
 
@@ -128,7 +130,7 @@ function calcularCronograma(monto, interes, tiempo) {
   let amortizacionConstante, pagoInteres, cuota;
   amortizacionConstante = monto / tiempo;
   for (let i = 1; i <= tiempo; i++) {
-      pagoInteres = monto * (interes / 100);
+      pagoInteres = (monto * (interes / 100))/12;
       cuota = amortizacionConstante + pagoInteres;
       monto = monto - amortizacionConstante;
 
