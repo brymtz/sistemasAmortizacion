@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <link href="https://tresplazas.com/web/img/big_punto_de_venta.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="https://kit.fontawesome.com/c9de76fc23.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+
+            <br> 
+            
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NOMBRE</th>
+                        <th>APELLIDO</th>
+                        <th>INSTITUCION</th>
+                        <th>USUARIO</th>
+                        <th>CONTRASEÑA</th>
+                    </tr>
+                </thead>
+                <tbody id="asesores">
+                </tbody>
+            </table>
+
+    <!--FLoating Button--->
+    <a href="#" class="hero__cta float-button">Update</a>
+
+
+    <!--Ventana Modadl--->
+    <section class="modal ">
+        <form class="modal__container" method="POST"  action="../backend/models/insertarAsesroes.php"">
+            <h2 class="modal__title">Crear Asesor</h2>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">ID</Label>
+                     <input type="text"  class="from__control" require name="ID">
+                 </div>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">Nombre</Label>
+                     <input type="text"  class="from__control" require name="nombre">
+                 </div>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">Apellido</Label>
+                     <input type="text"  class="from__control" require name="apellido" >
+                 </div>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">Institucion</Label>
+                     <input type="text"  class="from__control" require name="institucion" >
+                 </div>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">Usuario</Label>
+                     <input type="text"  class="from__control" require name="user" >
+                 </div>
+                 <div class="campo__Asesor">
+                     <Label  class="form__label">Contraseña</Label>
+                     <input type="text"  class="from__control" require name="pass" >
+                 </div>
+            <input type="submit" value="INSERTAR">
+            <a href="#" class="modal__close">Cancelar</a>
+        </form>
+    </section>
+
+</body>
+<script src="../js/admin2.js" ></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

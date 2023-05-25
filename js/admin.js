@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let valor = listaB.value;
         console.log(valor);
         getData(valor);
+        getDataUpdate(valor);
     }
 
     listaB.addEventListener("change", accionBotones);
@@ -42,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function getDataUpdate(dato) {
-        let listaInteres = document.getElementById('Intereses');
-        let url = "./backend/models/updateIntereses.php";
+        let url = "../backend/models/updateIntereses.php";
         let formaData = new FormData();
         console.log(`el valor es ${dato}`);
         formaData.append('campo', dato);
@@ -51,10 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
             method: 'POST',
             body: formaData,
         })
-            .then(response => response.json())
-            .then(data => {
-                listaInteres.innerHTML = data
-            }).catch(err => console.log(err))
+            .then(response => {
+                if (response.ok) {
+                    console.log('Datos enviados exitosamente');
+                } else {
+                    throw new Error('Error en la solicitud');
+                }
+            })
+            .catch(error => {
+                console.error('Error al enviar los datos:', error);
+            });
     }
 
 
@@ -65,7 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeModal = document.querySelector('.modal__close');
 
     openModal.addEventListener('click', (e) => {
-        //e.preventDefault();
+        e.preventDefault();
+        //getData(dato);
         modal.classList.add('modal--show');
     });
 

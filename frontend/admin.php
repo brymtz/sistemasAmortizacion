@@ -24,56 +24,17 @@
                 </div>
                 <br><br>
                 <div class="config">
-                    <li><a href="#">Configuración</a></li>
-                    <li><a href="#">Insetar Asesor</a></li>
+                    <li><a href="adminC.php" target="allIframe">Configuración</a></li>
+                    <li><a href="adminAs.php" target="allIframe">Insetar Asesor</a></li>
                     <li><a href="../backend/controllers/control_logout.php">Cerrar Sesión</a></li>
                 </div>
             </div>
         </div>
 
         <div class="contenedor__configuracion">
-
-            <div class="form-group">
-                <label style="color: black;">Institución Financiera :</label>
-                <select id="Banco">
-                </select>
-            </div>
-
-            <br> 
-            
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>Consumo</th>
-                        <th>Micorcredito</th>
-                        <th>Vivienda</th>
-                        <th>Estudiantil</th>
-                        <th colspan="2"><center> Ociones</center></th>
-                    </tr>
-                </thead>
-                <tbody id="Intereses">
-                    <tr>
-                        <?php
-                            include "../backend/models/DataBank.php";
-                        ?> 
-                        <td class="op"><li><a href="#" class="hero__cta">Actualizar</a></li></td>
-                    </tr>
-                </tbody>
-            </table>
+            <iframe name="allIframe" src="adminC.php" width="100%" height="100%" frameborder="0"></iframe>
         </div>
     </div>
-
-    <!--Ventana Modadl--->
-    <section class="modal ">
-        <form class="modal__container" method="POST"  action="../backend/models/updateIntereses.php"">
-            <h2 class="modal__title">Actualizar Intereses</h2>
-            <?php
-                echo modalWindows();
-            ?>
-            <input type="submit" value="ACTUALIZAR">
-            <a href="#" class="modal__close">Cancelar</a>
-        </form>
-    </section>
 
 </body>
 <script src="../js/admin.js" ></script>

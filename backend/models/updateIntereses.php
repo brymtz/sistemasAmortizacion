@@ -1,6 +1,6 @@
 <?php
 
-$idBank= isset($_POST['campo'])? $_POST['campo'] : 'ban01';
+$idBank= isset($_POST['campo'])? $_POST['campo'] : null;
 
 include ("conexion.php");
 $consumo = $_POST['consumo'] ;
