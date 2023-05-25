@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         let listaInteres = document.getElementById('Intereses');
         let url = "../backend/models/DataBank.php";
         let formaData = new FormData();
-        console.log(`el valor es ${dato}`);
         formaData.append('campo', dato);
         fetch(url, {
             method: 'POST',

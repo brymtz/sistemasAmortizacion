@@ -12,11 +12,29 @@
     <script src="https://kit.fontawesome.com/c9de76fc23.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+<style>
+    input[type="submit"]{
+        width:150px;
+        height:50px;
+        color:white;
+        background-color:#3b5998;
+        border-radius:6px;
+        margin-left:20px
+    }
+    input[type="submit"]:hover{
+        font-weight: 300;
+        transition: background-color .3s;
+        background-color:white;
+        color:#3b5998;
+    }
+</style>
 <body>
     
 
             <br> 
-            
+
+            <center><h1>Personal de Asesores Bancarios</h1></center>
+            <br>
             <table class="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -64,8 +82,10 @@
                      <Label  class="form__label">Contraseña</Label>
                      <input type="text"  class="from__control" require name="pass" >
                  </div>
-            <input type="submit" value="INSERTAR">
-            <a href="#" class="modal__close">Cancelar</a>
+                 <div class="botones">
+                    <input class="update" type="submit" value="INSERTAR">
+                    <a href="#" class="modal__close">Cancelar</a>
+                 </div>
         </form>
     </section>
 

@@ -19,8 +19,7 @@
                 <div class="img">
                     <img src="images/avatar.svg" alt="foto del user">
                     <br>
-                    <p style="font-size:20px;">nombre User</p>
-                    <p style="color:#b2dafa" >Banco</p>
+                    <p style="font-size:20px;">Oscar Troya</p>
                 </div>
                 <br><br>
                 <div class="config">

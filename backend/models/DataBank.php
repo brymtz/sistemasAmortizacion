@@ -1,14 +1,14 @@
 <?php
 
-$idBank= isset($_POST['campo'])? $_POST['campo'] : null;
-
-
+$idBank= isset($_POST['campo'])? $_POST['campo'] : 'ban01';
 
 function modalWindows(){
     include ("conexion.php");
     global $idBank;
-    echo $idBank;
     $sql = "SELECT	* FROM instituciones Where idInst='$idBank'"; echo '<div class="valor__interes">';
+    $resul = $conexion->query($sql);
+    $html2="";
+    if( $fila = $resul-> fetch_assoc() ){
         echo     '<Label  class="form__label">Consumo</Label>';
         echo     '<input type="number"  class="from__control" require name="consumo" value="'.$fila['iConsumo'].'">';
         echo '</div>';
@@ -24,9 +24,6 @@ function modalWindows(){
         echo     '<Label  class="form__label">Estudiantil</Label>';
         echo     '<input type="number"  class="from__control" require name="estudiantil" value="'.$fila['iEstudiantil'].'">';
         echo '</div>';
-    $resul = $conexion->query($sql);
-    $html2="";
-    if( $fila = $resul-> fetch_assoc() ){
        
     }
 
@@ -46,7 +43,6 @@ function detalleIntereses(){
         $html .= '<td>' . $fila["iMicrocredito"] . '</td >';
         $html .= '<td>' . $fila["iVivienda"] . '</td >';
         $html .= '<td>' . $fila["iEstudiantil"] . '</td >';
-        //$html .= '<td class="op"><li><a href="#" class="hero__cta">Actualizar</a></li></td>';
     }
 
     echo json_encode($html, JSON_UNESCAPED_UNICODE);

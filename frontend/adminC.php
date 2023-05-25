@@ -12,9 +12,28 @@
     <script src="https://kit.fontawesome.com/c9de76fc23.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
+<style>
+    input[type="submit"]{
+        width:150px;
+        height:50px;
+        color:white;
+        background-color:#3b5998;
+        border-radius:6px;
+    }
+    input[type="submit"]:hover{
+        font-weight: 300;
+        transition: background-color .3s;
+        background-color:white;
+        color:#3b5998;
+    }
+</style>
 <body>
     
-<div class="form-group">
+            <br> 
+
+            <center><h1>Configuración Tasas de Interes Bancarias</h1></center>
+            <br>
+            <div class="form-group">
                 <label style="color: black;">Institución Financiera :</label>
                 <select id="Banco">
                 </select>
@@ -48,6 +67,7 @@
     <section class="modal ">
         <form class="modal__container" method="POST"  action="../backend/models/updateIntereses.php"">
             <h2 class="modal__title">Actualizar Intereses</h2>
+            <script></script>
             <?php
                 echo modalWindows();
             ?>
