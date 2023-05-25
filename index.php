@@ -21,7 +21,7 @@ include_once ("backend/models/interes.php");
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">Simulador de Créditos</a>
   <form class="form-inline">
-    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Iniciar Sesion</button>
+    <a class="btn btn-outline-primary my-2 my-sm-0" href="frontend/login.php" role="button">Iniciar Sesion</a>
   </form>
 </nav>
     <div class="container">
