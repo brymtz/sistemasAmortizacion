@@ -1,9 +1,12 @@
 <?php
-include "../backend/models/amortizaciones.php";
+//include "../backend/models/amortizaciones.php";
 session_start();
 if (empty($_SESSION["id"])) {
     header("location: login.php");
 }
+$tablaAmortizacion = array();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -70,41 +73,44 @@ if (empty($_SESSION["id"])) {
     </div>
     <!--FORMULARIO-->
     <div class="container">
-        <form class="formulario">
+        <form class="formulario" action="amortizaciones.php" method="post">
             <div class="form-group">
                 <label for="nombreCliente">Nombre del cliente:</label>
                 <input type="text" class="form-control" id="nombreCliente" placeholder="Ingrese el nombre del cliente">
             </div>
             <div class="form-group">
                 <label for="montoCredito">Monto:</label>
-                <input type="number" class="form-control" id="montoCredito" placeholder="Ingrese el monto">
+                <input type="number" class="form-control" id="montoCredito" name="montoCredito" placeholder="Ingrese el monto">
             </div>
             <div class="form-group">
                 <label for="tiempoCredito">Tiempo:</label>
-                <input type="number" class="form-control" id="tiempoCredito" placeholder="Tiempo en meses">
+                <input type="number" class="form-control" id="tiempoCredito" name="tiempoCredito" placeholder="Tiempo en meses">
             </div>
             <div class="form-group">
                 <label for="tipoCredito">Tipo de crédito:</label>
                 <br>
                 <div class="dropdown">
-                    <select class="dropdown-toggle">Opciones
+                <select id="tipoCredito" name="tipoCredito" class="dropdown-toggle">Opciones
                         <div class="dropdown-menu">
-                            <option class="dropdown-item">Consumo</option>
-                            <option class="dropdown-item">Microcrédito</option>
-                            <option class="dropdown-item">Vivienda</option>
-                            <option class="dropdown-item">Estudiantil</option>
+                            <option value="15.6">Consumo 15.6%</option>
+                            <option value="25.12">Microcredito 25.12%</option>
+                            <option value="8.49">Vivienda 8.49</option>
+                            <option value="9.9">Estudiantil 9.9%</option>
                         </div>
                     </select>
                 </div>
+                <br>
+                <!---
+                <label for="tasaInteres">Tasa de Interés:</label>
+                <br>
+                <input type="text" class="form-control" id="tasaInteres" placeholder="La tasa de interés es" readonly>
+                -->
             </div>
             <br>
             <div class="form-group">
-                <label for="tasaInteres">Tasa de Interés:</label>
-                <input type="text" class="form-control" id="tasaInteres" placeholder="La tasa de interés es" readonly>
-            </div>
-            <div class="form-group">
-                <label for="tipoAmortizacion">Sistema de amortización:</label>
+                <!--<label for="tipoAmortizacion">Sistema de amortización:</label>-->
                 <br>
+                <!--
                 <div class="dropdown">
                     <select class="dropdown-toggle">Opciones
                         <div class="dropdown-menu">
@@ -113,10 +119,11 @@ if (empty($_SESSION["id"])) {
                         </div>
                     </select>
                 </div>
-            </div>
+                -->
             <br>
-            <button type="submit" class="btn btn-primary">Calcular</button>
-            <button type="button" class="btn btn-danger">Limpiar</button>
+            <br>
+            <button type="submit" name="btnFrances" name="btnFrances" class="btn btn-primary">Calcular Frances</button>
+            <button type="submit" name="btnAleman" id="btnAleman" class="btn btn-danger">Calcular Aleman</button>
         </form>
     </div>
     </div>
@@ -135,9 +142,13 @@ if (empty($_SESSION["id"])) {
                         </tr>
                     </thead>
                     <tbody>
-                    <?php
-                        aleman();
-                    ?>
+                    <?php  foreach($tablaAmortizacion as $cuota) {?>
+                        <td><?php echo $cuota["periodo"];?></td>
+                        <td><?php echo $cuota["cuota"];?></td>
+                        <td><?php echo $cuota["interes"];?></td>
+                        <td><?php echo $cuota["abono"];?></td>
+                        <td><?php echo $cuota["saldo"];?></td>
+      <?php } ?> 
                     </tbody>
                 </table>
             </div>

@@ -1,16 +1,34 @@
 <?php
 
+if(isset($_POST['btnFrances'])){
+    $intCapital = intval($_POST['montocredito']);
+    $intInteres = floatval($_POST['tipoCredito']);
+    $intPlazo = floatval($_POST['tiempoCredito']);
+    $tablaAmortizacion = array();
+    frances();
+}elseif(isset($_POST['btnAleman'])){
+    $intCapital = intval($_POST['montocredito']);
+    $intInteres = floatval($_POST['tipoCredito']);
+    $intPlazo = floatval($_POST['tiempoCredito']);
+    $tablaAmortizacion = array();
+    aleman();
+}
+
 
 function frances()
 {
-    $intCapital = 12000;
-    $intInteres = 14;
-    $intPlazo = 24;
+    /*$intCapital = $capital;
+    $intInteres = $interes;
+    $intPlazo = $plazo;
+    $tablaAmortizacion = array();*/
+    $intCapital = floatval($_POST['montocredito']);
+    $intInteres = floatval($_POST['tipoCredito']);
+    $intPlazo = floatval($_POST['tiempoCredito']);
     $tablaAmortizacion = array();
 
     $intInteresNominal = $intInteres / 12 / 100;
     $capitalSaldo = $intCapital;
-    $fltCuota = round(($intCapital * $intInteresNominal) / (1 - ((1 + $intInteresNominal) ** (-1 * $intPlazo))), 4);
+    $fltCuota = round(($intCapital * $intInteresNominal) / (1 - ((1 + $intInteresNominal) ** (-1 * $intPlazo))), 2);
     for ($i = 1; $i <= $intPlazo; $i++) {
         $cuotaItem = array();
         $cuotaItem["periodo"] = $i;
@@ -37,13 +55,14 @@ function frances()
                 <td>" . $cuota["saldo"] . "</td>
               </tr>";
     }
+    return $tablaAmortizacion;
 }
 
 function aleman()
 {
-    $intCapital = 25000;
-    $intInteres = 12;
-    $intPlazo = 12;
+    $intCapital = floatval($_POST['montocredito']);
+    $intInteres = floatval($_POST['tipoCredito']);
+    $intPlazo = floatval($_POST['tiempoCredito']);
     $tablaAmortizacion = array();
 
     $intInteresNominal = $intInteres / 12 / 100;
@@ -76,4 +95,5 @@ function aleman()
                 <td>" . $cuota["saldo"] . "</td>
               </tr>";
     }
+    return $tablaAmortizacion;
 }

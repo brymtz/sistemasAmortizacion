@@ -6,11 +6,13 @@ header('Access-Control-Allow-Methods: POST, GET, OPTIONS ');
 
 include "conexion.php";
 include "../controllers/control_login.php";
-//include(dirname(__FILE__) . '../controllers/control_login.php');
 
-$idBanco = $idInsti;
+$idBanco = $_SESSION["instTrabaja"];
 
-$sqlGet="SELECT * FROM `instituciones` WHERE idInst = 'ban01';";
+
+$cadena ="";
+
+$sqlGet="SELECT * FROM `instituciones` WHERE idInst ='$idBanco';";
 
 $respuesta=$conexion->query($sqlGet);
 
@@ -19,7 +21,11 @@ $result=array();
 if($respuesta->num_rows>0){
 
     while($filaeInteres=$respuesta->fetch_assoc()){
-        array_push($result, $filaeInteres);
+        $cadena .= '<option value="' . $filaeInteres["iConsumo"] . '">' ."Consumo" . '</option>';
+        $cadena .= '<option value="' . $filaeInteres["iMicrocredito"] . '">' ."Microcredito" . '</option>';
+        $cadena .= '<option value="' . $filaeInteres["iVivienda"] . '">' ."Vivienda" . '</option>';
+        $cadena .= '<option value="' . $filaeInteres["iEstudiantil"] . '">' ."Estudiantil" . '</option>';
+        array_push($result,$cadena);
     }
 
 }else{
@@ -28,6 +34,5 @@ if($respuesta->num_rows>0){
 }
 
 echo json_encode($result);
-echo $idBanco;
 
 ?>

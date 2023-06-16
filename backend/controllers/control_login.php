@@ -1,5 +1,5 @@
 <?php
-include "../backend/models/conexion.php";
+
 session_start();
 
 if(!empty($_POST["btnIngresar"])){
@@ -31,6 +31,15 @@ if(!empty($_POST["btnIngresar"])){
                 $_SESSION["idBanco"] = $datos3 -> idInst;
                 $_SESSION["nombreBanco"] = $datos3 -> nomInst;
                 $_SESSION["tipoBanco"] = $datos3 -> tipoInst;
+                $_SESSION["iConsumo"] = $datos3 -> iConsumo;
+                $_SESSION["iMicrocredito"] = $datos3 -> iMicrocredito;
+                $_SESSION["iVivienda"] = $datos3 -> iVivienda;
+                $_SESSION["iEstudiantil"] = $datos3 -> iEstudiantil;
+                $idBanco = $datos3 -> idInst;
+                $consumo = $datos3 -> iConsumo;
+                $micro = $datos3 -> iMicrocredito;
+                $vivienda = $datos3 -> iVivienda;
+                $estudiantil = $datos3 -> iEstudiantil;
             }
 
             header("location: ../frontend/dashboardAsesor.php");

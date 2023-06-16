@@ -22,6 +22,7 @@
             <img src="images/avatar.svg">
             <h2 class="title">BIENVENIDO</h2>
             <?php
+               include "../backend/models/conexion.php";
                include "../backend/controllers/control_login.php";
             ?>
             <div class="input-div one">
